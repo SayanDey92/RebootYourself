@@ -53,7 +53,7 @@ public class HibernateConfiguration {
 		properties.put("hibernate.dialect", environment.getRequiredProperty("spring.jpa.database-platform"));
 		properties.put("hibernate.show_sql", environment.getRequiredProperty("spring.jpa.show-sql"));
 		properties.put("hibernate.jdbc.lob.non_contextual_creation", environment.getRequiredProperty("spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation"));
-		properties.put("hibernate.ddl", environment.getRequiredProperty("spring.jpa.hibernate.ddl-auto"));
+		properties.put("hibernate.hbm2ddl.auto", environment.getRequiredProperty("spring.jpa.hibernate.ddl-auto"));
 		return properties;
 	}
 

@@ -1,4 +1,4 @@
-package com.reboot.yourself.service;
+package com.reboot.yourself.service.impl;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.reboot.yourself.dao.AppConfigDAO;
 import com.reboot.yourself.model.ApplicationConfiguration;
+import com.reboot.yourself.service.AppConfigService;
 
 @Service
 public class AppConfigServiceImpl implements AppConfigService{

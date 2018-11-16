@@ -13,7 +13,17 @@
       "sourceType": "com.reboot.yourself.config.ConfigProvider"
     },
     {
+      "name": "config.client-id",
+      "type": "java.lang.String",
+      "sourceType": "com.reboot.yourself.config.ConfigProvider"
+    },
+    {
       "name": "config.default-api-version",
+      "type": "java.lang.String",
+      "sourceType": "com.reboot.yourself.config.ConfigProvider"
+    },
+    {
+      "name": "config.oauth-url",
       "type": "java.lang.String",
       "sourceType": "com.reboot.yourself.config.ConfigProvider"
     },
@@ -24,6 +34,11 @@
     },
     {
       "name": "config.schema-name",
+      "type": "java.lang.String",
+      "sourceType": "com.reboot.yourself.config.ConfigProvider"
+    },
+    {
+      "name": "config.secret-key",
       "type": "java.lang.String",
       "sourceType": "com.reboot.yourself.config.ConfigProvider"
     }

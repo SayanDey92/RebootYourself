@@ -11,10 +11,12 @@ import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.ProjectionList;
 import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 
 import com.reboot.yourself.model.ApplicationConfiguration;
+import com.reboot.yourself.model.UserModel;
 
 @Transactional
 public class AppConfigDAO {
@@ -40,4 +42,24 @@ public class AppConfigDAO {
 		}
 		return results;
 	}
+	
+	
+	@SuppressWarnings("unchecked")
+	public UserModel findByUserName(String userName) {
+		UserModel model = null;
+		try {
+			DetachedCriteria criteria = DetachedCriteria.forClass(UserModel.class);
+			criteria.add(Restrictions.eq("emailId", userName));
+			criteria.add(Restrictions.eq("isDelete", false));
+			List<UserModel> userList = (List<UserModel>) this.hibernateTemplate.findByCriteria(criteria);
+			if(!userList.isEmpty()){
+				model=(UserModel) userList.get(0);
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return model;
+	}
+	
 }
