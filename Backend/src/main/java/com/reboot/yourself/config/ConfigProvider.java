@@ -23,6 +23,9 @@ public class ConfigProvider implements WebServerFactoryCustomizer<ConfigurableSe
 	public String defaultApiVersion;
 	public String projectName;
 	public String schemaName;
+	public String oauthUrl;
+	public String clientId;
+	public String secretKey;
 
 	public String getApiVersionOne() {
 		return apiVersionOne;
@@ -60,6 +63,30 @@ public class ConfigProvider implements WebServerFactoryCustomizer<ConfigurableSe
 	public void customize(ConfigurableServletWebServerFactory factory) {
 		factory.setContextPath(this.projectName);
 		factory.setPort(8083);
+	}
+
+	public String getOauthUrl() {
+		return oauthUrl;
+	}
+
+	public void setOauthUrl(String oauthUrl) {
+		this.oauthUrl = oauthUrl;
+	}
+
+	public String getClientId() {
+		return clientId;
+	}
+
+	public void setClientId(String clientId) {
+		this.clientId = clientId;
+	}
+
+	public String getSecretKey() {
+		return secretKey;
+	}
+
+	public void setSecretKey(String secretKey) {
+		this.secretKey = secretKey;
 	}
 
 }
