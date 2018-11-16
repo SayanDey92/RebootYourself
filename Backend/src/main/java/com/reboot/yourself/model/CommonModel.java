@@ -6,11 +6,14 @@ package com.reboot.yourself.model;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.MappedSuperclass;
 
 /**
  * @author AyanD
  *
  */
+@MappedSuperclass
 public class CommonModel {
 	
 	@Column(name="created_on")
